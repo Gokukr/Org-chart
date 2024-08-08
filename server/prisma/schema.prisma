@@ -31,7 +31,8 @@ model roles {
 }
 
 model users {
-  id       String @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
-  username String @unique @db.VarChar(255)
-  password String @db.VarChar(255)
+  id       String  @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  username String  @unique @db.VarChar(255)
+  password String  @db.VarChar(255)
+  role     String? @default("user") @db.VarChar(255)
 }
